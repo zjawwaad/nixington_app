@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 10px;
+    font-family: Copperplate,Copperplate Gothic Light,fantasy; 
+}
+
+.nav {
+display: flex;
+align-items: center;
+color: rgb(255, 201, 243);
+justify-content:center;
+height: 150px;
+font-size: xx-large;
+text-decoration:overline underline;
+}
+
+.top {
+  display: flex;
+}
+
+.join {
+  line-height: 10px;
+}
+
+.sidebar {
+flex: auto;
+flex-direction: column;
+width: max-content;
+border-radius: 25px;
+display: flex;
+Background-color: rgb( 255, 201, 243);
+line-height:0;
+}
+.sidebar2 {
+  flex: auto;
+  flex-direction: column;
+  width: max-content;
+  border-radius: 25px;
+  display: flex;
+  Background-color: rgb( 255, 201, 243);
+  line-height:0px;
+  }
+
+.login {
+  line-height: 10px;
+}
+
+
+/* .list2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    color: rgb( 255, 201, 243);
+} */
+
+
+.dropbtn {
+  background-color: white;
+  color: rgb( 255, 201, 243);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+
+}
+
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+background-color: #00a6ff;
+}
+
+.links {
+justify-content: space-evenly;
+display: flex;
+}
+
+.submit {
+height: 35px;
+width: 100px;
+background-color: white;
+color: rgb( 255, 201, 243);
+border: none;
+font-size: 16px;
+box-shadow: 5px 5px black;
+}
+
+.btn {
+display: flex;
+justify-content: center;
+}
+
+
+.stories {
+  border: solid 1px  rgb( 255, 201, 243);
+  width: fit-content;
+  align-items: center;
+  width: 50%;
+  bottom: 0; 
+  left: 25%;
+}
+
+.marquee img { 
+  border: none;
+  padding:0;
+  margin:0;
+  display: inline-flexbox;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.shadow {
+  position:fixed;
+  width: 50%;
+  bottom: 0; 
+  vertical-align: middle;
+  left: 25%;
+}

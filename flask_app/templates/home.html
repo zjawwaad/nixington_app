@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>NIXINGTON</title>
+</head>
+<body>
+    <div class="nav">
+        <h1>N I X I N G T O N</h1><br> 
+    </div>
+    <div class="links">
+        <div class="dropdown">
+            <button class="dropbtn">#HotTopics</button>
+            <div class="dropdown-content">
+                <a href="#">Sleep Training</a>
+                <a href="#">Transitioning to Preschool</a>
+                <a href="#">Parents Night Out</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">#NewBornLife</button>
+            <div class="dropdown-content">
+                <a href="#">First Days Home</a>
+                <a href="#">TwoUnder2!</a>
+                <a href="#">Bed Time Blues</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">#ToddlerLife</button>
+            <div class="dropdown-content">
+                <a href="#">Transitioning to Preschool</a>
+                <a href="#">Becoming a Big Brother</a>
+                <a href="#">Potty Training</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">#ParentingHacks</button>
+            <div class="dropdown-content">
+                <a href="#">Bath time fun</a>
+                <a href="#">Kitchen Helpers</a>
+                <a href="#">Clean up Counts!</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">#LearningatHome</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="top">
+            <div class="sidebar">
+                <h3 class="join">Join our Community</h3>
+                <form method="POST" action="/registration">
+                    <label>First Name:</label>
+                    <input type="text" id="first_name" name="first_name"><br>
+                    {% for message in get_flashed_messages( category_filter = ['error_registration_first_name'] ) %}
+                    {{message}}
+                    {% endfor %}
+
+                    <label>Last Name:</label>
+                    <input type="text" id="last_name" name="last_name"><br>
+                    {% for message in get_flashed_messages( category_filter = ['error_registration_last_name'] ) %}
+                    {{message}}
+                    {% endfor %}
+
+                    <label>Baby's Name:</label>
+                    <input type="text" id="baby_name" name="baby_name"><br>
+
+                    <label>Baby's Birth Date:</label>
+                    <input type="date" id="baby_bday" name="baby_bday"><br>
+
+                    <label>Email:</label>
+                    <input type="text" id="email" name="email"><br>
+                    {% for message in get_flashed_messages( category_filter = ['error_registration_email'] ) %}
+                    {{message}}
+                    {% endfor %}
+
+                    <label>Password:</label>
+                    <input type="password" id="password" name="password"><br>
+
+                    <label>Confirm PW:</label>
+                    <input type="password" id="confirm" name="confirm"><br>
+                    {% for message in get_flashed_messages( category_filter = ['error_registration_confirm'] ) %}
+                    {{message}}
+                    {% endfor %}
+                    <div class="btn">
+                    <input type="submit" value="Join" class="submit">
+                    </div>
+                </form>
+            </div>
+            <div class="marquee">
+                <marquee behavior="scroll" direction="left">
+                    <img src="{{ url_for('static', filename='img/1.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/2.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/3.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/4.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/5.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/6.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/7.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/8.jpeg') }}" width="350" height="310" alt="Natural" />
+                    <img src="{{ url_for('static', filename='img/9.jpeg') }}" width="350" height="310" alt="Natural" />
+                </marquee>
+            </div>
+        </div>
+            <div class="stories">
+                <table class="table">
+                    {% for story in list_stories: %}
+                    <tr>
+                        <th>Posted By: {{story.user.first_name}}</th>
+                    </tr>
+                    <tr>
+                        <td>{{story.my_story}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        <div class="bottom">
+            <div class="sidebar2">
+                <h3 class=login>LOGIN</h3>
+                <form method="POST" action='/user/login'>
+                    <label>Email:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    
+                    <label>Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    {% for message in get_flashed_messages( category_filter = ['error_login_credentials'] ) %}
+                    {{message}}
+                    {% endfor %}
+                    <div class="btn">
+                    <input type="submit" value="Submit" class="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="shadow">
+        <img src="{{ url_for('static', filename='img/shadow.png') }}" width="550" height="150" alt="Natural" />
+        </div>
+    </div>
+    <!-- <img src="{{ url_for('static', filename='img/1.jpeg') }}"> -->
+</body>
+</html>
