@@ -16,7 +16,7 @@ class User:
 
     @classmethod
     def create( cls, data ):
-        query = "Insert INTO users( first_name, last_name, baby_name, baby_bday, email, password ) VALUES (%(first_name)s, %(last_name)s, %(baby_name)s, %(baby_bday)s, %(email)s, %(password)s );"
+        query = "Insert INTO users(first_name, last_name, baby_name, baby_bday, email, password ) VALUES (%(first_name)s, %(last_name)s, %(baby_name)s, %(baby_bday)s, %(email)s, %(password)s );"
         result = connectToMySQL('nixington_schema').query_db(query, data)
         return result
 

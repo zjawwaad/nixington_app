@@ -113,6 +113,9 @@
                 </marquee>
             </div>
         </div>
+        <div>
+            <a href="/newstory">Share your Story!</a>
+        </div>
             <div class="stories">
                 <table class="table">
                     {% for story in list_stories: %}
@@ -122,10 +125,10 @@
                     <tr>
                         <td>{{story.my_story}}</td>
                     </tr>
-                    <tr>
-                        <td><a href="#">Delete</a> <a href="#">Edit</a></td>
-                    </tr>
                     {% endfor %}
+                    <tr>
+                        <td><a href="#">Delete</a> <a href="/editstory/1">Edit</a></td>
+                    </tr>
                 </table>
             </div>
         <div class="bottom">
