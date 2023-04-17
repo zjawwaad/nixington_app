@@ -14,7 +14,6 @@ def login():
 
 @app.route ('/registration', methods = ['POST'])
 def register(): 
-
     if User.validate( request.form ) == False:
         return redirect( '/' )
 
